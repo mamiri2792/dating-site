@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dating Site</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 400px;
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #signupBtn {
+      background: #111;
+      color: white;
+    }
+
+    #loginBtn {
+      background: #eee;
+    }
+
+    #message {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>❤️ Dating Site</h1>
+
+    <p>Create your account and start meeting people.</p>
+
+    <input id="email" type="email" placeholder="Email address">
+
+    <input id="password" type="password" placeholder="Password">
+
+    <button id="signupBtn">Create Account</button>
+
+    <button id="loginBtn">Log In</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    document.getElementById("signupBtn").onclick = function() {
+      document.getElementById("message").textContent =
+        "Signup button is working!";
+    };
+
+    document.getElementById("loginBtn").onclick = function() {
+      document.getElementById("message").textContent =
+        "Login button is working!";
+    };
+  </script>
+
+</body>
+</html>
