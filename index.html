@@ -1,0 +1,44 @@
+<script type="module">
+
+  import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+  import { auth } from "./firebase.js";
+
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+  const message = document.getElementById("message");
+
+  document.getElementById("signupBtn").onclick = async () => {
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        email.value.trim(),
+        password.value
+      );
+
+      message.textContent = "Account created successfully! ❤️";
+
+    } catch (error) {
+      message.textContent = error.message;
+    }
+  };
+
+  document.getElementById("loginBtn").onclick = async () => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        email.value.trim(),
+        password.value
+      );
+
+      message.textContent = "Login successful! ❤️";
+
+    } catch (error) {
+      message.textContent = error.message;
+    }
+  };
+
+</script>
